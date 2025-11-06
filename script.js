@@ -48,8 +48,17 @@ filterButtons.forEach(button => {
 });
 
 // Form submission is handled by FormSubmit.co
-// Emails are sent directly to ashwiniyadav765435@gmail.com
-// No additional JavaScript needed - FormSubmit handles everything
+// Set dynamic redirect URL based on current location
+document.addEventListener('DOMContentLoaded', function() {
+    const formRedirect = document.getElementById('formRedirect');
+    if (formRedirect) {
+        // Get current URL and construct thank-you page URL
+        const currentUrl = window.location.href;
+        const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1);
+        formRedirect.value = baseUrl + 'thank-you.html';
+        console.log('Form will redirect to:', formRedirect.value);
+    }
+});
 
 // Contact button is now a link, no JavaScript needed
 
