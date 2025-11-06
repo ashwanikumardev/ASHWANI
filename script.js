@@ -200,16 +200,59 @@ if (!popupShown && bookingPopup) {
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
         sessionStorage.setItem('bookingPopupShown', 'true');
         
+        // Force reinitialize the booking embed
+        setTimeout(() => {
+            if (bookingEmbed) {
+                // Try to trigger embed initialization
+                if (window.CosmofeedEmbed && typeof window.CosmofeedEmbed.init === 'function') {
+                    try {
+                        window.CosmofeedEmbed.init();
+                        console.log('Embed reinitialized');
+                    } catch (e) {
+                        console.log('Embed initialization error:', e);
+                    }
+                }
+                
+                // Also try to manually create iframe if needed
+                if (!bookingEmbed.querySelector('iframe')) {
+                    const dataSrc = bookingEmbed.getAttribute('data-src');
+                    if (dataSrc) {
+                        const iframe = document.createElement('iframe');
+                        iframe.src = dataSrc;
+                        iframe.style.width = '100%';
+                        iframe.style.height = '700px';
+                        iframe.style.border = 'none';
+                        iframe.setAttribute('allowfullscreen', '');
+                        bookingEmbed.appendChild(iframe);
+                        console.log('Manual iframe created');
+                    }
+                }
+            }
+        }, 500);
+
+        
         // Hide loader when iframe loads
         if (bookingEmbed) {
+            let attempts = 0;
+            const maxAttempts = 20; // 10 seconds max
+            
             const checkEmbed = setInterval(() => {
+                attempts++;
                 const iframe = bookingEmbed.querySelector('iframe');
+                
                 if (iframe) {
                     const loader = document.querySelector('.booking-loader');
                     if (loader) {
                         setTimeout(() => {
                             loader.style.display = 'none';
                         }, 1000);
+                    }
+                    clearInterval(checkEmbed);
+                } else if (attempts >= maxAttempts) {
+                    // If embed doesn't load after 10 seconds, show error
+                    const loader = document.querySelector('.booking-loader');
+                    if (loader) {
+                        loader.innerHTML = '<p style="color: #00ADB5;">Unable to load calendar. <a href="https://superprofile.bio/bookings/ashwaniyadav00" target="_blank" style="color: #00ADB5; text-decoration: underline;">Click here to book directly</a></p>';
                     }
                     clearInterval(checkEmbed);
                 }

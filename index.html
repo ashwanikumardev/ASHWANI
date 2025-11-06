@@ -395,8 +395,20 @@
         </div>
     </div>
 
-    <!-- SuperProfile Booking Embed Script -->
-    <script id='cosmofeed-embed-booking' src='https://cosmofeed.com/assets/embed/booking-embed.js'></script>
+    <!-- SuperProfile Booking Embed Script - Load first -->
+    <script id='cosmofeed-embed-booking' src='https://cosmofeed.com/assets/embed/booking-embed.js' async></script>
+    
+    <!-- Wait for embed script to load -->
+    <script>
+        // Ensure embed script is loaded before initializing
+        window.addEventListener('load', function() {
+            if (window.CosmofeedEmbed) {
+                console.log('Cosmofeed Embed loaded successfully');
+            } else {
+                console.warn('Cosmofeed Embed not loaded');
+            }
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
