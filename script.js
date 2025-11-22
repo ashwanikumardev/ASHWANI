@@ -70,13 +70,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Contact button is now a link, no JavaScript needed
 
-// Hire me button - redirect to SuperProfile booking
-const hireMeBtn = document.querySelector('.btn-primary');
-if (hireMeBtn) {
-    hireMeBtn.addEventListener('click', function(e) {
+// Booking Popup Modal Functionality
+const bookingBtn = document.getElementById('bookingBtn');
+const bookingPopup = document.getElementById('bookingPopup');
+const closePopup = document.getElementById('closePopup');
+
+// Open booking popup when clicking "HIRE ME" button
+if (bookingBtn) {
+    bookingBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        // Redirect to SuperProfile booking page
-        window.open('https://superprofile.bio/bookings/ashwaniyadav00?sessionId=690c12078ad42000139095db', '_blank');
+        if (bookingPopup) {
+            bookingPopup.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    });
+}
+
+// Close popup when clicking close button
+if (closePopup) {
+    closePopup.addEventListener('click', function() {
+        if (bookingPopup) {
+            bookingPopup.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
+}
+
+// Close popup when clicking outside the modal content
+if (bookingPopup) {
+    bookingPopup.addEventListener('click', function(e) {
+        if (e.target === bookingPopup) {
+            bookingPopup.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
     });
 }
 
