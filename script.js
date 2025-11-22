@@ -40,7 +40,7 @@ window.addEventListener('scroll', highlightNavigation);
 // Filter buttons functionality
 const filterButtons = document.querySelectorAll('.filter-btn');
 filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         this.classList.add('active');
         // Add your filter logic here
@@ -57,7 +57,7 @@ setTimeout(() => {
 
 // Form submission is handled by FormSubmit.co
 // Set dynamic redirect URL based on current location
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const formRedirect = document.getElementById('formRedirect');
     if (formRedirect) {
         // Get current URL and construct thank-you page URL
@@ -77,7 +77,7 @@ const closePopup = document.getElementById('closePopup');
 
 // Open booking popup when clicking "HIRE ME" button
 if (bookingBtn) {
-    bookingBtn.addEventListener('click', function(e) {
+    bookingBtn.addEventListener('click', function (e) {
         e.preventDefault();
         if (bookingPopup) {
             bookingPopup.classList.add('active');
@@ -88,7 +88,7 @@ if (bookingBtn) {
 
 // Close popup when clicking close button
 if (closePopup) {
-    closePopup.addEventListener('click', function() {
+    closePopup.addEventListener('click', function () {
         if (bookingPopup) {
             bookingPopup.classList.remove('active');
             document.body.style.overflow = ''; // Restore scrolling
@@ -98,7 +98,7 @@ if (closePopup) {
 
 // Close popup when clicking outside the modal content
 if (bookingPopup) {
-    bookingPopup.addEventListener('click', function(e) {
+    bookingPopup.addEventListener('click', function (e) {
         if (e.target === bookingPopup) {
             bookingPopup.classList.remove('active');
             document.body.style.overflow = ''; // Restore scrolling
@@ -106,8 +106,18 @@ if (bookingPopup) {
     });
 }
 
+// Auto-open booking popup after 5 seconds
+setTimeout(function () {
+    if (bookingPopup && !sessionStorage.getItem('popupShown')) {
+        bookingPopup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Mark that popup has been shown in this session
+        sessionStorage.setItem('popupShown', 'true');
+    }
+}, 5000); // 5 seconds delay
+
 // Navbar scroll effect
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
@@ -122,7 +132,7 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -158,53 +168,53 @@ document.head.appendChild(style);
 function addMouseFollowEffect(section, elementsSelector) {
     const sectionElement = document.querySelector(section);
     const floatingElements = document.querySelectorAll(elementsSelector);
-    
+
     if (sectionElement && floatingElements.length > 0) {
-        sectionElement.addEventListener('mousemove', function(e) {
+        sectionElement.addEventListener('mousemove', function (e) {
             const rect = sectionElement.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             floatingElements.forEach((element, index) => {
                 // Different movement speeds for each element
                 const speed = (index + 1) * 0.015;
                 const moveX = (x - rect.width / 2) * speed;
                 const moveY = (y - rect.height / 2) * speed;
-                
+
                 // Get current rotation if element has one
                 const currentTransform = window.getComputedStyle(element).transform;
-                const hasRotation = element.classList.contains('floating-square') || 
-                                   element.classList.contains('floating-square-2') ||
-                                   element.classList.contains('contact-square-1') ||
-                                   element.classList.contains('footer-square') ||
-                                   element.classList.contains('footer-square-2');
-                
+                const hasRotation = element.classList.contains('floating-square') ||
+                    element.classList.contains('floating-square-2') ||
+                    element.classList.contains('contact-square-1') ||
+                    element.classList.contains('footer-square') ||
+                    element.classList.contains('footer-square-2');
+
                 if (hasRotation) {
-                    const rotation = element.classList.contains('floating-square') ? 45 : 
-                                   element.classList.contains('floating-square-2') ? 25 :
-                                   element.classList.contains('contact-square-1') ? 35 :
-                                   element.classList.contains('footer-square') ? 25 : -20;
+                    const rotation = element.classList.contains('floating-square') ? 45 :
+                        element.classList.contains('floating-square-2') ? 25 :
+                            element.classList.contains('contact-square-1') ? 35 :
+                                element.classList.contains('footer-square') ? 25 : -20;
                     element.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${rotation}deg)`;
                 } else {
                     element.style.transform = `translate(${moveX}px, ${moveY}px)`;
                 }
             });
         });
-        
+
         // Reset position when mouse leaves
-        sectionElement.addEventListener('mouseleave', function() {
+        sectionElement.addEventListener('mouseleave', function () {
             floatingElements.forEach(element => {
-                const hasRotation = element.classList.contains('floating-square') || 
-                                   element.classList.contains('floating-square-2') ||
-                                   element.classList.contains('contact-square-1') ||
-                                   element.classList.contains('footer-square') ||
-                                   element.classList.contains('footer-square-2');
-                
+                const hasRotation = element.classList.contains('floating-square') ||
+                    element.classList.contains('floating-square-2') ||
+                    element.classList.contains('contact-square-1') ||
+                    element.classList.contains('footer-square') ||
+                    element.classList.contains('footer-square-2');
+
                 if (hasRotation) {
-                    const rotation = element.classList.contains('floating-square') ? 45 : 
-                                   element.classList.contains('floating-square-2') ? 25 :
-                                   element.classList.contains('contact-square-1') ? 35 :
-                                   element.classList.contains('footer-square') ? 25 : -20;
+                    const rotation = element.classList.contains('floating-square') ? 45 :
+                        element.classList.contains('floating-square-2') ? 25 :
+                            element.classList.contains('contact-square-1') ? 35 :
+                                element.classList.contains('footer-square') ? 25 : -20;
                     element.style.transform = `translate(0, 0) rotate(${rotation}deg)`;
                 } else {
                     element.style.transform = 'translate(0, 0)';
@@ -233,7 +243,7 @@ if (!popupShown && bookingPopup) {
         bookingPopup.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
         sessionStorage.setItem('bookingPopupShown', 'true');
-        
+
         // Force reinitialize the booking embed
         setTimeout(() => {
             if (bookingEmbed) {
@@ -246,7 +256,7 @@ if (!popupShown && bookingPopup) {
                         console.log('Embed initialization error:', e);
                     }
                 }
-                
+
                 // Also try to manually create iframe if needed
                 if (!bookingEmbed.querySelector('iframe')) {
                     const dataSrc = bookingEmbed.getAttribute('data-src');
@@ -264,16 +274,16 @@ if (!popupShown && bookingPopup) {
             }
         }, 500);
 
-        
+
         // Hide loader when iframe loads
         if (bookingEmbed) {
             let attempts = 0;
             const maxAttempts = 20; // 10 seconds max
-            
+
             const checkEmbed = setInterval(() => {
                 attempts++;
                 const iframe = bookingEmbed.querySelector('iframe');
-                
+
                 if (iframe) {
                     const loader = document.querySelector('.booking-loader');
                     if (loader) {
@@ -297,7 +307,7 @@ if (!popupShown && bookingPopup) {
 
 // Close popup functionality
 if (closePopupBtn) {
-    closePopupBtn.addEventListener('click', function() {
+    closePopupBtn.addEventListener('click', function () {
         bookingPopup.classList.remove('active');
         document.body.style.overflow = ''; // Restore scrolling
     });
@@ -305,7 +315,7 @@ if (closePopupBtn) {
 
 // Close popup when clicking outside
 if (bookingPopup) {
-    bookingPopup.addEventListener('click', function(e) {
+    bookingPopup.addEventListener('click', function (e) {
         if (e.target === bookingPopup) {
             bookingPopup.classList.remove('active');
             document.body.style.overflow = '';
@@ -314,7 +324,7 @@ if (bookingPopup) {
 }
 
 // Allow Escape key to close popup
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && bookingPopup && bookingPopup.classList.contains('active')) {
         bookingPopup.classList.remove('active');
         document.body.style.overflow = '';
