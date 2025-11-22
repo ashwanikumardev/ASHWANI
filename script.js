@@ -70,51 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Contact button is now a link, no JavaScript needed
 
-// Booking Popup Modal Functionality
-const bookingBtn = document.getElementById('bookingBtn');
-const bookingPopup = document.getElementById('bookingPopup');
-const closePopup = document.getElementById('closePopup');
-
-// Open booking popup when clicking "HIRE ME" button
-if (bookingBtn) {
-    bookingBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (bookingPopup) {
-            bookingPopup.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-    });
-}
-
-// Close popup when clicking close button
-if (closePopup) {
-    closePopup.addEventListener('click', function () {
-        if (bookingPopup) {
-            bookingPopup.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        }
-    });
-}
-
-// Close popup when clicking outside the modal content
-if (bookingPopup) {
-    bookingPopup.addEventListener('click', function (e) {
-        if (e.target === bookingPopup) {
-            bookingPopup.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        }
-    });
-}
-
-// Auto-open booking popup after 5 seconds
-setTimeout(function () {
-    if (bookingPopup && !sessionStorage.getItem('popupShown')) {
-        bookingPopup.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        // Mark that popup has been shown in this session
-        sessionStorage.setItem('popupShown', 'true');
-    }
-}, 5000); // 5 seconds delay
+// Booking Popup Modal Functionality - See full implementation below (lines ~230+)
 
 // Navbar scroll effect
 window.addEventListener('scroll', function () {
@@ -229,56 +185,57 @@ addMouseFollowEffect('.home-section', '.floating-element');
 addMouseFollowEffect('.contact-section', '.contact-float-element');
 addMouseFollowEffect('.footer', '.footer-floating-element');
 
-// Booking Popup on Main Page - Show after 8 seconds
+// Booking Popup on Main Page - Show after 5 seconds
 const bookingPopup = document.getElementById('bookingPopup');
 const closePopupBtn = document.getElementById('closePopup');
 const bookingEmbed = document.getElementById('booking-popup-embed');
+const bookingBtn = document.getElementById('bookingBtn');
 
-// Check if popup was already shown in this session
-const popupShown = sessionStorage.getItem('bookingPopupShown');
-
-if (!popupShown && bookingPopup) {
-    // Show popup after 8 seconds
-    setTimeout(() => {
-        bookingPopup.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        sessionStorage.setItem('bookingPopupShown', 'true');
-
-        // Force reinitialize the booking embed
-        setTimeout(() => {
-            if (bookingEmbed) {
-                // Try to trigger embed initialization
-                if (window.CosmofeedEmbed && typeof window.CosmofeedEmbed.init === 'function') {
-                    try {
-                        window.CosmofeedEmbed.init();
-                        console.log('Embed reinitialized');
-                    } catch (e) {
-                        console.log('Embed initialization error:', e);
-                    }
-                }
-
-                // Also try to manually create iframe if needed
-                if (!bookingEmbed.querySelector('iframe')) {
-                    const dataSrc = bookingEmbed.getAttribute('data-src');
-                    if (dataSrc) {
-                        const iframe = document.createElement('iframe');
-                        iframe.src = dataSrc;
-                        iframe.style.width = '100%';
-                        iframe.style.height = '700px';
-                        iframe.style.border = 'none';
-                        iframe.setAttribute('allowfullscreen', '');
-                        bookingEmbed.appendChild(iframe);
-                        console.log('Manual iframe created');
-                    }
-                }
+// Function to initialize booking embed
+function initializeBookingEmbed() {
+    if (bookingEmbed) {
+        // Try to trigger embed initialization
+        if (window.CosmofeedEmbed && typeof window.CosmofeedEmbed.init === 'function') {
+            try {
+                window.CosmofeedEmbed.init();
+                console.log('Embed reinitialized');
+            } catch (e) {
+                console.log('Embed initialization error:', e);
             }
-        }, 500);
+        }
 
+        // Also try to manually create iframe if needed
+        if (!bookingEmbed.querySelector('iframe')) {
+            const dataSrc = bookingEmbed.getAttribute('data-src');
+            if (dataSrc) {
+                const iframe = document.createElement('iframe');
+                iframe.src = dataSrc;
+                iframe.style.width = '100%';
+                iframe.style.height = '700px';
+                iframe.style.border = 'none';
+                iframe.setAttribute('allowfullscreen', '');
+                bookingEmbed.appendChild(iframe);
+                console.log('Manual iframe created');
+            }
+        }
+    }
+}
+
+// Function to show booking popup
+function showBookingPopup() {
+    if (bookingPopup) {
+        bookingPopup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Initialize embed after showing popup
+        setTimeout(() => {
+            initializeBookingEmbed();
+        }, 500);
 
         // Hide loader when iframe loads
         if (bookingEmbed) {
             let attempts = 0;
-            const maxAttempts = 20; // 10 seconds max
+            const maxAttempts = 20;
 
             const checkEmbed = setInterval(() => {
                 attempts++;
@@ -293,7 +250,6 @@ if (!popupShown && bookingPopup) {
                     }
                     clearInterval(checkEmbed);
                 } else if (attempts >= maxAttempts) {
-                    // If embed doesn't load after 10 seconds, show error
                     const loader = document.querySelector('.booking-loader');
                     if (loader) {
                         loader.innerHTML = '<p style="color: #00ADB5;">Unable to load calendar. <a href="https://superprofile.bio/bookings/ashwaniyadav00" target="_blank" style="color: #00ADB5; text-decoration: underline;">Click here to book directly</a></p>';
@@ -302,7 +258,26 @@ if (!popupShown && bookingPopup) {
                 }
             }, 500);
         }
-    }, 8000);
+    }
+}
+
+// Manual trigger: Open booking popup when clicking "HIRE ME" button
+if (bookingBtn) {
+    bookingBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        showBookingPopup();
+    });
+}
+
+// Check if popup was already shown in this session
+const popupShown = sessionStorage.getItem('bookingPopupShown');
+
+if (!popupShown && bookingPopup) {
+    // Show popup after 5 seconds
+    setTimeout(() => {
+        showBookingPopup();
+        sessionStorage.setItem('bookingPopupShown', 'true');
+    }, 5000);
 }
 
 // Close popup functionality
