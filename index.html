@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India Insight Hub – India, History, Geography, Education &amp; Technology</title>
+  <meta name="description" content="Explore informative articles about India, history, geography, education, technology, AI, careers, finance and travel. Your trusted source for knowledge.">
+  <meta name="keywords" content="India blog, history, geography, education, technology, AI, career, finance, travel">
+  <meta name="author" content="India Insight Hub">
+  <link rel="canonical" href="https://www.indiainsighthub.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="India Insight Hub – India, History, Geography, Education &amp; Technology">
+  <meta property="og:description" content="Explore informative articles about India, history, geography, education, technology, AI, careers, finance and travel.">
+  <meta property="og:url" content="https://www.indiainsighthub.com/">
+  <meta property="og:image" content="https://www.indiainsighthub.com/assets/images/hero-banner.webp">
+  <meta property="og:site_name" content="India Insight Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="India Insight Hub – India, History, Geography, Education &amp; Technology">
+  <meta name="twitter:description" content="Explore informative articles about India, history, geography, education, technology, AI, careers, finance and travel.">
+  <meta name="twitter:image" content="https://www.indiainsighthub.com/assets/images/hero-banner.webp">
+
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "India Insight Hub",
+    "url": "https://www.indiainsighthub.com/",
+    "description": "Informative articles about India, history, geography, education, technology, AI, careers, finance and travel.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.indiainsighthub.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "India Insight Hub",
+    "url": "https://www.indiainsighthub.com/",
+    "logo": "https://www.indiainsighthub.com/assets/images/logo.webp"
+  }
+  </script>
+
+  <!-- GOOGLE ANALYTICS CODE HERE -->
+
+  <!-- Google Search Console Verification -->
+  <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE"> -->
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="India Insight Hub - Home">
+        <div class="logo-icon" aria-hidden="true">I</div>
+        India <span>Insight</span> Hub
+      </a>
+
+      <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="index.html#india">India</a>
+        <a href="index.html#history">History</a>
+        <a href="index.html#geography">Geography</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#technology">Technology</a>
+        <a href="index.html#ai">AI</a>
+        <a href="index.html#career">Career</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn" aria-label="Open search" title="Search articles">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">🏠 Home</a>
+      <a href="index.html#india">🇮🇳 India</a>
+      <a href="index.html#history">📜 History</a>
+      <a href="index.html#geography">🗺️ Geography</a>
+      <a href="index.html#education">📚 Education</a>
+      <a href="index.html#technology">💻 Technology</a>
+      <a href="index.html#ai">🤖 AI</a>
+      <a href="index.html#career">💼 Career</a>
+      <a href="about.html">ℹ️ About</a>
+      <a href="contact.html">📬 Contact</a>
+    </nav>
+  </header>
+
+  <!-- ══ SEARCH OVERLAY ══ -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-label="Search" aria-modal="true">
+    <div class="search-box">
+      <h3>🔍 Search Articles</h3>
+      <div class="search-input-wrap">
+        <input type="search" id="search-input" placeholder="Search for India, History, AI, Technology..." autocomplete="off" aria-label="Search articles">
+        <button class="btn btn-primary" onclick="document.getElementById('search-input').dispatchEvent(new Event('input'))">Search</button>
+      </div>
+      <div class="search-results" id="search-results" role="list"></div>
+      <div class="search-close" id="search-close" role="button" tabindex="0" aria-label="Close search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Press Escape or click here to close
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ══ HERO ══ -->
+    <section class="hero" aria-label="Hero section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            India's Trusted Knowledge Blog
+          </div>
+          <h1>Explore India — History, Geography, Technology &amp; More</h1>
+          <p>Discover well-researched articles on India's rich history, stunning geography, modern technology, AI, career guidance, finance basics and travel. Knowledge made simple.</p>
+          <div class="hero-buttons">
+            <a href="#latest" class="btn btn-primary">
+              Explore Articles
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="about.html" class="btn btn-light">About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STATS BAR ══ -->
+    <div class="stats-bar" aria-label="Website statistics">
+      <div class="container">
+        <div class="stats-inner">
+          <div class="stat-item">
+            <span class="stat-num">30+</span>
+            <span class="stat-label">Articles</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">10</span>
+            <span class="stat-label">Categories</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Free Access</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">SEO</span>
+            <span class="stat-label">Optimised</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ FEATURED ARTICLE ══ -->
+    <section class="section-gap" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="featured-heading">⭐ <span>Featured</span> Article</h2>
+        </div>
+        <a href="blog/nalanda-history.html" class="featured-article" aria-label="Read featured article: Nalanda University">
+          <div class="featured-img">
+            <img src="assets/images/nalanda-university.webp"
+                 alt="Ancient Nalanda University ruins in Bihar, India"
+                 loading="eager" width="600" height="400">
+          </div>
+          <div class="featured-body">
+            <div class="featured-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+              History · Featured
+            </div>
+            <h2>Nalanda University: History, Location and Importance</h2>
+            <p>Once the world's greatest centre of learning, Nalanda University in Bihar attracted scholars from across Asia. Discover its remarkable history, what was taught there, and why it still matters today.</p>
+            <div class="featured-meta">
+              <span>📅 September 26, 2026</span>
+              <span>•</span>
+              <span>⏱ 8 min read</span>
+              <span>•</span>
+              <span>✍️ India Insight Hub</span>
+            </div>
+            <span class="btn btn-primary">Read Full Article →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ══ CATEGORY FILTER ══ -->
+    <section class="section-gap-sm" style="background:var(--clr-surface)" aria-labelledby="cats-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="cats-heading">Browse by <span>Category</span></h2>
+        </div>
+        <div class="categories-grid" role="list">
+          <button class="cat-chip active" data-cat="all" onclick="filterCategory('all')" role="listitem">
+            <span class="cat-icon">🌐</span> All Topics
+          </button>
+          <button class="cat-chip" data-cat="India" onclick="filterCategory('India')" role="listitem">
+            <span class="cat-icon">🇮🇳</span> India
+          </button>
+          <button class="cat-chip" data-cat="History" onclick="filterCategory('History')" role="listitem">
+            <span class="cat-icon">📜</span> History
+          </button>
+          <button class="cat-chip" data-cat="Geography" onclick="filterCategory('Geography')" role="listitem">
+            <span class="cat-icon">🗺️</span> Geography
+          </button>
+          <button class="cat-chip" data-cat="Education" onclick="filterCategory('Education')" role="listitem">
+            <span class="cat-icon">📚</span> Education
+          </button>
+          <button class="cat-chip" data-cat="Technology" onclick="filterCategory('Technology')" role="listitem">
+            <span class="cat-icon">💻</span> Technology
+          </button>
+          <button class="cat-chip" data-cat="AI" onclick="filterCategory('AI')" role="listitem">
+            <span class="cat-icon">🤖</span> AI
+          </button>
+          <button class="cat-chip" data-cat="Career" onclick="filterCategory('Career')" role="listitem">
+            <span class="cat-icon">💼</span> Career
+          </button>
+          <button class="cat-chip" data-cat="Finance" onclick="filterCategory('Finance')" role="listitem">
+            <span class="cat-icon">💰</span> Finance
+          </button>
+          <button class="cat-chip" data-cat="Travel" onclick="filterCategory('Travel')" role="listitem">
+            <span class="cat-icon">✈️</span> Travel
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ LATEST ARTICLES ══ -->
+    <section class="section-gap" id="latest" aria-labelledby="latest-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="latest-heading">📰 Latest <span>Articles</span></h2>
+          <span class="text-muted" style="font-size:.85rem">30 articles across 10 categories</span>
+        </div>
+        <div class="cards-grid" id="articles-grid">
+
+          <!-- History -->
+          <article class="article-card" data-cat="History">
+            <div class="card-image">
+              <img data-src="assets/images/nalanda-university.webp" src="assets/images/nalanda-university.webp" alt="Nalanda University ruins" loading="lazy" width="400" height="225">
+              <span class="card-category">History</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>8 min</span></div>
+              <h3 class="card-title">Nalanda University: History, Location and Importance</h3>
+              <p class="card-excerpt">Once the world's greatest centre of learning, Nalanda attracted thousands of scholars from across Asia. Discover its history and lasting legacy.</p>
+              <div class="card-footer">
+                <a href="blog/nalanda-history.html" class="read-more">Read More →</a>
+                <small class="text-muted">History</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="History">
+            <div class="card-image">
+              <img data-src="assets/images/ancient-india-history.webp" src="assets/images/ancient-india-history.webp" alt="Ancient India artifacts" loading="lazy" width="400" height="225">
+              <span class="card-category">History</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>10 min</span></div>
+              <h3 class="card-title">History of Ancient India: Major Periods and Events</h3>
+              <p class="card-excerpt">From the Indus Valley Civilisation to the Gupta Empire — a comprehensive look at the major periods that shaped ancient India.</p>
+              <div class="card-footer">
+                <a href="blog/ancient-india-history.html" class="read-more">Read More →</a>
+                <small class="text-muted">History</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="History">
+            <div class="card-image">
+              <img data-src="assets/images/maurya-empire.webp" src="assets/images/maurya-empire.webp" alt="Maurya Empire Ashoka pillar" loading="lazy" width="400" height="225">
+              <span class="card-category">History</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>9 min</span></div>
+              <h3 class="card-title">Maurya Empire: History, Administration and Achievements</h3>
+              <p class="card-excerpt">Chandragupta Maurya built India's first great empire. Learn about its rise, Ashoka's transformation, and the empire's extraordinary achievements.</p>
+              <div class="card-footer">
+                <a href="blog/maurya-empire.html" class="read-more">Read More →</a>
+                <small class="text-muted">History</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Geography -->
+          <article class="article-card" data-cat="Geography">
+            <div class="card-image">
+              <img data-src="assets/images/geography-of-india.webp" src="assets/images/geography-of-india.webp" alt="India topographic map view" loading="lazy" width="400" height="225">
+              <span class="card-category">Geography</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>9 min</span></div>
+              <h3 class="card-title">Geography of India: Physical Features and Regions</h3>
+              <p class="card-excerpt">India's geography is remarkably diverse — from the Himalayas in the north to the tropical coasts in the south. Explore every physical region.</p>
+              <div class="card-footer">
+                <a href="blog/geography-of-india.html" class="read-more">Read More →</a>
+                <small class="text-muted">Geography</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="Geography">
+            <div class="card-image">
+              <img data-src="assets/images/major-rivers-india.webp" src="assets/images/major-rivers-india.webp" alt="Ganga river at sunrise in Varanasi" loading="lazy" width="400" height="225">
+              <span class="card-category">Geography</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>8 min</span></div>
+              <h3 class="card-title">Major Rivers of India and Their Importance</h3>
+              <p class="card-excerpt">India's rivers — the Ganga, Yamuna, Brahmaputra and Godavari — are lifelines for millions. Learn about their origins, courses and significance.</p>
+              <div class="card-footer">
+                <a href="blog/major-rivers-india.html" class="read-more">Read More →</a>
+                <small class="text-muted">Geography</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="Geography">
+            <div class="card-image">
+              <img data-src="assets/images/himalayan-mountains.webp" src="assets/images/himalayan-mountains.webp" alt="Majestic Himalayan snow-capped peaks" loading="lazy" width="400" height="225">
+              <span class="card-category">Geography</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>9 min</span></div>
+              <h3 class="card-title">Himalayan Mountains: Geography, Climate and Importance</h3>
+              <p class="card-excerpt">The Himalayas are the world's highest mountain range and India's northern shield. Understand their geography, climate and why they matter.</p>
+              <div class="card-footer">
+                <a href="blog/himalayan-mountains.html" class="read-more">Read More →</a>
+                <small class="text-muted">Geography</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="Geography">
+            <div class="card-image">
+              <img data-src="assets/images/indian-monsoon.webp" src="assets/images/indian-monsoon.webp" alt="Indian monsoon rain over green fields" loading="lazy" width="400" height="225">
+              <span class="card-category">Geography</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>7 min</span></div>
+              <h3 class="card-title">Indian Monsoon: How It Works and Why It Matters</h3>
+              <p class="card-excerpt">The monsoon transforms India every year. Learn how it forms, why it is crucial for agriculture, and what happens when it fails.</p>
+              <div class="card-footer">
+                <a href="blog/indian-monsoon.html" class="read-more">Read More →</a>
+                <small class="text-muted">Geography</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Education -->
+          <article class="article-card" data-cat="Education">
+            <div class="card-image">
+              <img data-src="assets/images/education-study.webp" src="assets/images/education-study.webp" alt="Indian student studying at desk" loading="lazy" width="400" height="225">
+              <span class="card-category">Education</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>6 min</span></div>
+              <h3 class="card-title">How to Make Effective College Notes</h3>
+              <p class="card-excerpt">Good notes are the foundation of exam success. Discover the Cornell method, mind mapping, and other note-taking strategies that actually work.</p>
+              <div class="card-footer">
+                <a href="blog/effective-college-notes.html" class="read-more">Read More →</a>
+                <small class="text-muted">Education</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="Education">
+            <div class="card-image">
+              <img data-src="assets/images/education-study.webp" src="assets/images/education-study.webp" alt="Student preparing for university exams" loading="lazy" width="400" height="225">
+              <span class="card-category">Education</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>7 min</span></div>
+              <h3 class="card-title">How to Prepare for University Exams</h3>
+              <p class="card-excerpt">A practical, step-by-step guide for planning revision, managing exam stress, and performing your best on exam day.</p>
+              <div class="card-footer">
+                <a href="blog/prepare-university-exams.html" class="read-more">Read More →</a>
+                <small class="text-muted">Education</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Technology -->
+          <article class="article-card" data-cat="Technology">
+            <div class="card-image">
+              <img data-src="assets/images/ai-technology.webp" src="assets/images/ai-technology.webp" alt="Artificial intelligence neural network concept" loading="lazy" width="400" height="225">
+              <span class="card-category">Technology</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>8 min</span></div>
+              <h3 class="card-title">What Is Artificial Intelligence? A Beginner's Guide</h3>
+              <p class="card-excerpt">AI is reshaping every industry. This beginner-friendly guide explains what artificial intelligence is, how it works and why it matters.</p>
+              <div class="card-footer">
+                <a href="blog/what-is-artificial-intelligence.html" class="read-more">Read More →</a>
+                <small class="text-muted">Technology</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="Technology">
+            <div class="card-image">
+              <img data-src="assets/images/ai-technology.webp" src="assets/images/ai-technology.webp" alt="Generative AI changing education" loading="lazy" width="400" height="225">
+              <span class="card-category">Technology</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>7 min</span></div>
+              <h3 class="card-title">How Generative AI Is Changing Education</h3>
+              <p class="card-excerpt">From personalised tutoring to automated grading, generative AI is transforming how students learn and how teachers teach.</p>
+              <div class="card-footer">
+                <a href="blog/generative-ai-education.html" class="read-more">Read More →</a>
+                <small class="text-muted">Technology</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- AI -->
+          <article class="article-card" data-cat="AI">
+            <div class="card-image">
+              <img data-src="assets/images/ai-technology.webp" src="assets/images/ai-technology.webp" alt="AI tools for student productivity" loading="lazy" width="400" height="225">
+              <span class="card-category">AI</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>6 min</span></div>
+              <h3 class="card-title">How Students Can Use AI for Productivity</h3>
+              <p class="card-excerpt">ChatGPT, Notion AI, and other tools can help you study smarter. Here's how to use AI ethically and effectively as a student.</p>
+              <div class="card-footer">
+                <a href="blog/ai-for-student-productivity.html" class="read-more">Read More →</a>
+                <small class="text-muted">AI</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Career -->
+          <article class="article-card" data-cat="Career">
+            <div class="card-image">
+              <img data-src="assets/images/career-resume.webp" src="assets/images/career-resume.webp" alt="Building a resume as a college student" loading="lazy" width="400" height="225">
+              <span class="card-category">Career</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>7 min</span></div>
+              <h3 class="card-title">How to Build a Resume as a College Student</h3>
+              <p class="card-excerpt">Even without work experience, you can build a strong resume. Learn what to include, how to format it, and how to make it stand out.</p>
+              <div class="card-footer">
+                <a href="blog/build-resume-college.html" class="read-more">Read More →</a>
+                <small class="text-muted">Career</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- India -->
+          <article class="article-card" data-cat="India">
+            <div class="card-image">
+              <img data-src="assets/images/geography-of-india.webp" src="assets/images/geography-of-india.webp" alt="Map of India showing states" loading="lazy" width="400" height="225">
+              <span class="card-category">India</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>10 min</span></div>
+              <h3 class="card-title">Interesting Facts About India</h3>
+              <p class="card-excerpt">India is one of the world's most fascinating countries. Discover surprising facts about its culture, history, science and achievements.</p>
+              <div class="card-footer">
+                <a href="blog/interesting-facts-india.html" class="read-more">Read More →</a>
+                <small class="text-muted">India</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Finance -->
+          <article class="article-card" data-cat="Finance">
+            <div class="card-image">
+              <img data-src="assets/images/career-resume.webp" src="assets/images/career-resume.webp" alt="Personal finance for college students" loading="lazy" width="400" height="225">
+              <span class="card-category">Finance</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>6 min</span></div>
+              <h3 class="card-title">Personal Finance Basics for College Students</h3>
+              <p class="card-excerpt">Managing money in college doesn't have to be difficult. Learn budgeting, saving and basic investment principles that will last a lifetime.</p>
+              <div class="card-footer">
+                <a href="blog/personal-finance-students.html" class="read-more">Read More →</a>
+                <small class="text-muted">Finance</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Travel -->
+          <article class="article-card" data-cat="Travel">
+            <div class="card-image">
+              <img data-src="assets/images/nalanda-university.webp" src="assets/images/nalanda-university.webp" alt="Historical places in Bihar to visit" loading="lazy" width="400" height="225">
+              <span class="card-category">Travel</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta"><span>Sep 26, 2026</span><span class="dot"></span><span>8 min</span></div>
+              <h3 class="card-title">Best Historical Places to Visit in Bihar</h3>
+              <p class="card-excerpt">Bihar is home to some of India's most important historical sites. From Bodh Gaya to Nalanda, here's your complete guide to Bihar's heritage.</p>
+              <div class="card-footer">
+                <a href="blog/historical-places-bihar.html" class="read-more">Read More →</a>
+                <small class="text-muted">Travel</small>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /cards-grid -->
+
+        <div style="text-align:center;margin-top:48px">
+          <p style="color:var(--clr-text-muted);margin-bottom:16px">More articles coming soon across all categories</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ HISTORY SECTION ══ -->
+    <section class="section-gap cat-section" id="history" aria-labelledby="history-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="history-heading">📜 <span>History</span> Articles</h2>
+          <a href="index.html#history" class="view-all">View All →</a>
+        </div>
+        <div class="cards-grid cards-grid-4">
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/nalanda-university.webp" src="assets/images/nalanda-university.webp" alt="Nalanda ruins" loading="lazy" width="300" height="169">
+              <span class="card-category">History</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Nalanda University: History, Location and Importance</h3>
+              <p class="card-excerpt">The ancient world's greatest university and its enduring legacy.</p>
+              <div class="card-footer">
+                <a href="blog/nalanda-history.html" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/maurya-empire.webp" src="assets/images/maurya-empire.webp" alt="Maurya Empire" loading="lazy" width="300" height="169">
+              <span class="card-category">History</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Maurya Empire: History, Administration and Achievements</h3>
+              <p class="card-excerpt">India's first great empire — from Chandragupta to Ashoka.</p>
+              <div class="card-footer">
+                <a href="blog/maurya-empire.html" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/ancient-india-history.webp" src="assets/images/ancient-india-history.webp" alt="Ancient India" loading="lazy" width="300" height="169">
+              <span class="card-category">History</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">History of Ancient India: Major Periods and Events</h3>
+              <p class="card-excerpt">A timeline of the major civilisations and empires of ancient India.</p>
+              <div class="card-footer">
+                <a href="blog/ancient-india-history.html" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/ancient-india-history.webp" src="assets/images/ancient-india-history.webp" alt="Gupta Empire golden age" loading="lazy" width="300" height="169">
+              <span class="card-category">History</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Gupta Empire: The Golden Age of Ancient India</h3>
+              <p class="card-excerpt">Art, science, mathematics — the Gupta era transformed Indian civilisation.</p>
+              <div class="card-footer">
+                <a href="blog/gupta-empire.html" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ GEOGRAPHY SECTION ══ -->
+    <section class="section-gap" id="geography" aria-labelledby="geo-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="geo-heading">🗺️ <span>Geography</span> Articles</h2>
+          <a href="index.html#geography" class="view-all">View All →</a>
+        </div>
+        <div class="cards-grid cards-grid-4">
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/geography-of-india.webp" src="assets/images/geography-of-india.webp" alt="Geography of India" loading="lazy" width="300" height="169">
+              <span class="card-category">Geography</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Geography of India: Physical Features and Regions</h3>
+              <p class="card-excerpt">Mountains, plains, plateaus and coasts — India's landscape explained.</p>
+              <div class="card-footer"><a href="blog/geography-of-india.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/major-rivers-india.webp" src="assets/images/major-rivers-india.webp" alt="Rivers of India" loading="lazy" width="300" height="169">
+              <span class="card-category">Geography</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Major Rivers of India and Their Importance</h3>
+              <p class="card-excerpt">The sacred rivers that sustain India's people and agriculture.</p>
+              <div class="card-footer"><a href="blog/major-rivers-india.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/himalayan-mountains.webp" src="assets/images/himalayan-mountains.webp" alt="Himalayan mountains" loading="lazy" width="300" height="169">
+              <span class="card-category">Geography</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Himalayan Mountains: Geography, Climate and Importance</h3>
+              <p class="card-excerpt">The world's highest mountain range and its role in India's climate.</p>
+              <div class="card-footer"><a href="blog/himalayan-mountains.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/indian-monsoon.webp" src="assets/images/indian-monsoon.webp" alt="Indian monsoon" loading="lazy" width="300" height="169">
+              <span class="card-category">Geography</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Indian Monsoon: How It Works and Why It Matters</h3>
+              <p class="card-excerpt">The seasonal rains that feed a billion people — explained simply.</p>
+              <div class="card-footer"><a href="blog/indian-monsoon.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TECHNOLOGY & AI SECTION ══ -->
+    <section class="section-gap cat-section" id="technology" aria-labelledby="tech-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="tech-heading">💻 <span>Technology &amp; AI</span></h2>
+          <a href="index.html#technology" class="view-all">View All →</a>
+        </div>
+        <div class="cards-grid cards-grid-4">
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/ai-technology.webp" src="assets/images/ai-technology.webp" alt="Artificial intelligence" loading="lazy" width="300" height="169">
+              <span class="card-category">Technology</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">What Is Artificial Intelligence? A Beginner's Guide</h3>
+              <p class="card-excerpt">AI explained simply — what it is, how it works, and why it matters.</p>
+              <div class="card-footer"><a href="blog/what-is-artificial-intelligence.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/ai-technology.webp" src="assets/images/ai-technology.webp" alt="Cloud computing" loading="lazy" width="300" height="169">
+              <span class="card-category">Technology</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">What Is Cloud Computing? Simple Explanation</h3>
+              <p class="card-excerpt">From Google Drive to AWS — understanding how the cloud actually works.</p>
+              <div class="card-footer"><a href="blog/what-is-cloud-computing.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+          <article class="article-card" id="ai">
+            <div class="card-image">
+              <img data-src="assets/images/ai-technology.webp" src="assets/images/ai-technology.webp" alt="AI tools for students" loading="lazy" width="300" height="169">
+              <span class="card-category">AI</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">AI Tools Every College Student Should Know</h3>
+              <p class="card-excerpt">The best AI tools to help you study, write, and manage your time better.</p>
+              <div class="card-footer"><a href="blog/ai-tools-for-students.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/ai-technology.webp" src="assets/images/ai-technology.webp" alt="How to write AI prompts" loading="lazy" width="300" height="169">
+              <span class="card-category">AI</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">How to Write Better Prompts for AI</h3>
+              <p class="card-excerpt">Getting good results from AI starts with good prompts. Here's how to craft them.</p>
+              <div class="card-footer"><a href="blog/ai-prompt-writing.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ EDUCATION & CAREER ══ -->
+    <section class="section-gap" id="education" aria-labelledby="edu-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="edu-heading">📚 <span>Education &amp; Career</span></h2>
+          <a href="index.html#education" class="view-all">View All →</a>
+        </div>
+        <div class="cards-grid cards-grid-4">
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/education-study.webp" src="assets/images/education-study.webp" alt="College study techniques" loading="lazy" width="300" height="169">
+              <span class="card-category">Education</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Best Study Techniques for College Students</h3>
+              <p class="card-excerpt">Scientifically-backed methods that help you retain more and study less.</p>
+              <div class="card-footer"><a href="blog/study-techniques.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/education-study.webp" src="assets/images/education-study.webp" alt="Time management for students" loading="lazy" width="300" height="169">
+              <span class="card-category">Education</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Time Management for First-Year College Students</h3>
+              <p class="card-excerpt">Balance lectures, assignments, and social life without burning out.</p>
+              <div class="card-footer"><a href="blog/time-management-college.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+          <article class="article-card" id="career">
+            <div class="card-image">
+              <img data-src="assets/images/career-resume.webp" src="assets/images/career-resume.webp" alt="Skills to learn during college" loading="lazy" width="300" height="169">
+              <span class="card-category">Career</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Best Skills to Learn During College</h3>
+              <p class="card-excerpt">The skills employers actually want — and how to develop them while studying.</p>
+              <div class="card-footer"><a href="blog/skills-to-learn-college.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="card-image">
+              <img data-src="assets/images/career-resume.webp" src="assets/images/career-resume.webp" alt="Freelancing for students" loading="lazy" width="300" height="169">
+              <span class="card-category">Career</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">How Students Can Build a Freelancing Career</h3>
+              <p class="card-excerpt">Start earning while you study — a practical guide to student freelancing.</p>
+              <div class="card-footer"><a href="blog/freelancing-for-students.html" class="read-more">Read More →</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ NEWSLETTER ══ -->
+    <section class="newsletter section-gap" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <h2 id="newsletter-heading">📩 Stay Informed</h2>
+        <p>Get the latest articles about India, history, technology and careers delivered directly to your inbox.</p>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p style="margin-top:14px;font-size:.78rem;color:rgba(255,255,255,.5)">No spam. Unsubscribe at any time.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom:16px">
+            <div class="logo-icon">I</div>
+            India <span>Insight</span> Hub
+          </div>
+          <p>A knowledge blog covering India, history, geography, education, technology, AI, careers, finance and travel. Reliable information for curious minds.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">ig</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="index.html#india">🇮🇳 India</a></li>
+            <li><a href="index.html#history">📜 History</a></li>
+            <li><a href="index.html#geography">🗺️ Geography</a></li>
+            <li><a href="index.html#education">📚 Education</a></li>
+            <li><a href="index.html#technology">💻 Technology</a></li>
+            <li><a href="index.html#ai">🤖 AI</a></li>
+            <li><a href="index.html#career">💼 Career</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
+        <p>© 2026 India Insight Hub. All rights reserved.</p>
+        <p>
+          <a href="privacy-policy.html">Privacy</a> ·
+          <a href="disclaimer.html">Disclaimer</a> ·
+          <a href="terms.html">Terms</a> ·
+          <a href="sitemap.xml">Sitemap</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block admin or private directories (if any are added later)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /drafts/
+
+# Allow all crawlers to access all content
+Allow: /blog/
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://www.indiainsighthub.com/sitemap.xml
+
+# Crawl-delay (optional, in seconds)
+# Crawl-delay: 1
