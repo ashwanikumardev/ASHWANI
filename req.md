@@ -4,7 +4,7 @@ Absolutely. If you want to build a **full HTML blog website** that you can gener
 
 A good starting concept is a **general knowledge / India / student-focused blog**, because it gives you many topics without locking the site into one narrow category.
 
-**Example brand:** `India Insight Hub`
+**Example brand:** `AugCodex`
 
 Possible categories:
 
